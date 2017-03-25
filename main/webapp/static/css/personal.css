@@ -1,0 +1,189 @@
+*{
+    box-sizing: border-box;
+    font-family: '微软雅黑','宋体','华文宋体';
+}
+html{overflow-x: hidden;}
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+a:hover{
+    color: #71c2a1;
+}
+ul{
+    list-style-type:none;
+}
+body{
+    width:93%;
+    margin:0 auto;
+}
+header,main{
+    width: 100%;
+}
+.src{
+    margin-top:18px;
+}
+.src span{
+    padding:0 5px;
+}
+.src .srcspan{
+    display: inline-block;
+    width:30px;
+}
+.src .srcspan img{
+    width:26px;
+    vertical-align: -1px;
+}
+
+.personal{
+    width:100%;
+    height:70px;
+    margin-top: 15px;
+}
+.personal .info{
+    width:15%;
+    float: left;
+}
+.personal .cargo{
+    width:85%;
+    float: left;
+}
+.info .headimg{
+    width:100%;
+}
+.info .headimg .spanimg{
+    /*width: 40px;*/
+    width:70px;
+    display: inline-block;
+    padding-right: 5px;
+}
+.spanimg img{
+    width:100%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    vertical-align: middle;
+}
+
+.cargo .cargonav ul li{
+    float: left;
+    margin:0 25px;
+    height:30px;
+    line-height:30px;
+    cursor: pointer;
+}
+.cargo .cargonav ul li span{
+    color:red;
+}
+.cargocont{
+    width:100%;
+}
+.cargocont .ul1,.mygoods,.publish{
+    width:85%;
+    margin-left:15%;
+}
+.cargocont .ul1>li{
+    height:200px;
+    -webkit-box-shadow:0 0 1px #aaa;
+    -moz-box-shadow: 0 0 1px #aaa;
+    box-shadow: 0 0 1px #aaa;
+    padding-left:60px;
+}
+.cargocont .ul1 >li ul{
+    padding:0;
+}
+.cargocont .ul1 .span0{
+    line-height:200px;
+    /*padding-left:100px;*/
+}
+.cargocont .ul1 li .ul2 li{
+    float: left;
+}
+.ul2 #imgli1{
+    width:10%;
+    height:200px;
+    position: relative;
+}
+.ul2 #imgli1 img{
+    width:100px;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+.ul2 #spanli1{
+    width:90%;
+    height:200px;
+    line-height:200px;
+    padding-left:20px;
+}
+.ul1 .ul1li3{
+    padding-top:40px;
+}
+.ul1 .ul1li3 .ul3 li .time{
+    padding-right:20px;
+}
+.ul1 .ul1li3 ul{
+    margin-bottom:5px; ;
+}
+.ul1 .ul1li3 .ul4 li img{
+    width:100px;
+    vertical-align: middle;
+    margin-right:20px;
+}
+
+.mygoodsnav ul li,.pubnav ul li{
+    float: left;
+    margin:20px 25px 10px 20px;
+    cursor: pointer;
+}
+.mygoodscont{
+    clear: both;
+    box-shadow: 0 0 1px #aaa;
+    margin-left:40px;
+}
+.mygoodscont ul{
+    margin:0;
+    padding:10px 0 10px 20px;
+    /*padding:0;*/
+}
+#warehouse ul li p span{
+    color: red;
+}
+#warehouse ul li div .houseimg{
+    display: inline-block;
+    width:150px;
+}
+#warehouse ul li div .houseimg img{
+    width:100%;
+    vertical-align: middle;
+}
+
+/*种植日记、多肉转让*/
+.publish{
+    padding-bottom:50px;
+}
+.pubcont ul li form textarea {
+    width: 80%;
+    height: 300px;
+    padding-left:20px;
+    resize: none;
+    border: none;
+    -webkit-box-shadow: 0 0 1px #aaa ;
+    -moz-box-shadow: 0 0 1px #aaa ;
+    box-shadow:0 0 1px #aaa ;
+}
+.btn button{
+    position: absolute;
+    right:300px;
+    padding:10px 30px;
+    background-color:rgb(113, 194, 161);
+    border:none;
+    color: #fff;
+    letter-spacing: 5px;
+}
+
+

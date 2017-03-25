@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!--Responsive layout：响应式布局-->
+    <link type="text/css" rel="stylesheet" href="/static/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/details.css" />
+    <title>多肉详情</title>
+    <style>
+        footer p{
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!--所有内容-->
+
+<!--主体开始-->
+<div id="goodsmain">
+    <div class="col-12">
+        <div class="src">
+            <span class="srcspan"><img src="/static/img/logo.png" alt="logo"/></span><span><a th:href="@{/index}">首页</a><span><span>/</span><a href="details.html">多肉详情&nbsp;&raquo;</a></span></span>
+        </div>
+    </div>
+    <!--商品详情-->
+    <div id="goodsdetail">
+        <div class="focusMain isFocus demoG col-7">
+            <div class="focusArea">
+                <div class="focusCon">
+                    <div class="focusItem">
+                        <a href="#"><img th:src="@{${p.imgs}}" alt="" /></a>
+                    </div>
+                    <div class="focusItem">
+                        <a href="#"><img src="/static/img/2.jpg" alt="" /></a>
+                    </div>
+                    <div class="focusItem">
+                        <a href="#"><img src="/static/img/3.jpg" alt="" /></a>
+                    </div>
+                    <div class="focusItem">
+                        <a href="#"><img src="/static/img/4.jpg" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="focusIndicators">
+                <a href="javascript:"><img src="/static/img/5.jpg" alt="" /></a>
+                <a href="javascript:"><img src="/static/img/2.jpg" alt="" /></a>
+                <a href="javascript:"><img src="/static/img/3.jpg" alt="" /></a>
+                <a href="javascript:"><img src="/static/img/4.jpg" alt="" /></a>
+            </div>
+        </div>
+        <div class="goodsname col-5">
+            <div class="dellist">
+                <ul class="detailul">
+                    <li id="li1"><span th:text="${p.plantname}"></span></li>
+                    <li id="li2">价格：&yen; <span th:text="${p.price}"></span>元</li>
+                    <!--<li id="hr"><hr/></li>-->
+                </ul>
+                <div id="pay">
+                    <span>首付比例：</span>
+                    <select>
+                        <option>零首付</option>
+                        <option>10%</option>
+                        <option>20%</option>
+                        <option>30%</option>
+                        <option>40%</option>
+                        <option>50%</option>
+                    </select>
+                </div>
+                <div id="paymonth">
+                    <span>分期月数：</span>
+                    <ul>
+                        <li>不分期</li>
+                        <li>1个月</li>
+                        <li>2个月</li>
+                        <li>3个月</li>
+                        <li>4个月</li>
+                        <li>5个月</li>
+                        <li>6个月</li>
+                    </ul>
+                </div>
+                <div id="permonth">
+                    <span>月供：</span>
+                    <span>￥<span class="prispan">2元</span></span>
+
+                </div>
+
+                <div style="height: 30px;"></div>
+                <button id="btn1">确认</button>
+                <div style="height: 70px;"></div>
+                <div id="like" class="img1"> </div>
+                <span class="share">分享到：</span>
+                <a href="#"><img class="shatu"  src="/static/img/kj.png"/></a>
+                <a href="#"><img class="shatu"  src="/static/img/wx.png"/></a>
+                <a href="#"><img class="shatu" src="/static/img/qq.png"/></a>
+            </div>
+        </div>
+        <div id="tab" class="col-7">
+            <div id="navlist">
+                <ul>
+                    <li class="select" onclick="liclick1()">
+                       多肉介绍
+                    </li>
+                    <li id="tab2" onclick="liclick2()">
+                      多肉养护
+                    </li>
+                    <li id="tab3" onclick="liclick3()">
+                        肉友互动
+                    </li>
+                </ul>
+            </div>
+            <div id="content">
+                <div class="con" id="con1">
+                    <span>多肉介绍</span>
+                    <p><span th:text="${p.description}"></span></p></div>
+                <div class="con" id="con2">
+                    <span>多肉养护</span>
+                    <p>喜温暖干燥和阳光充足环境，生长季节可以全日照，但是夏季高温达到35度就要适当遮阳通风。不耐寒，耐干旱，怕水湿和强光暴晒，平时的浇水保持盆土的湿润即可，避免雨淋和积水。冬季可以不浇水。保持盆土的基本干燥即可。</p>
+                </div>
+                <div class="con" id="con3">
+                    <span>肉友互动</span>
+                    <!--改-->
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-5 other ">
+                <div id="ogoods">
+                    <span id="span1">多肉推荐</span>
+                    <span id="span2"><a href="#">more&raquo;</a></span>
+                </div>
+                <div class="ogoods">
+                    <a href="#"><img src="/static/img/j1.jpg"/></a><br/>
+                    <a href="#"><span>仙女杯属西陌莎</span></a>
+                </div>
+                <div class="ogoods">
+                    <a href="#"><img src="/static/img/f1.jpg"/></a><br/>
+                    <a href="#"><span>生石花属橄榄玉</span></a>
+                </div>
+                <div class="ogoods">
+                    <a href="#"><img src="/static/img/d1.jpg"/></a><br/>
+                    <a href="#"><span>大戟属光棍树</span></a>
+                </div>
+                <div class="ogoods">
+                    <a href="#"><img src="/static/img/j1.jpg"/></a><br/>
+                    <a href="#"><span>千里光属银月</span></a>
+                </div>
+            </div>
+    </div>
+</div>
+
+<!--结尾开始-->
+    <footer>
+        <ul>
+            <li><span>友情链接：</span></li>
+            <li><a href="http://www.drzj.net/">多肉之家</a></li>
+            <li><a href="http://www.drlmeng.com/">多肉联盟</a></li>
+            <li><a href="http://pifa.duoroucn.com/">多肉互联</a></li>
+            <li><a href="http://www.suicao.com/">岁草网</a></li>
+            <li><a href="http://droooo.com/">多肉网</a></li>
+        </ul>
+        <p>Copyright&copy;2017翼灵物联 All Rights Reserved</p>
+    </footer>
+<!--结尾结束-->
+    <!--<script src="http://file.bluesdream.com/js/jquery-1.8.3.min.js"></script>-->
+<script src="/static/js/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="/static/js/img_carousel.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            /* 设置和说明：
+             =====================================================
+             // 效果展现 （以下为默认值）
+             ubEffect:'left',						// 效果呈现方式 'left' 'top' 'fade' 'leftSeamless' 'topSeamless'
+             ubAutoPlay:'on',					// 是否自动播放
+             ubAutoBtn:'on',						// 小按钮是否自动生成（便于做成缩略图形式）
+             */
+            $(".demoG").ublue_ImageCarousel({
+                ubAutoPlay:"off", 			// 关闭自动播放
+                ubEffect:"fade", 			// 图片切换方式为渐变（淡入淡出）
+                ubAutoBtn:"off" 			// 小按钮不自动生成（手工做成缩略图形式）
+            });
+        });
+
+        // 喜欢与不喜欢
+        $('#like').click(function(){
+            $(this).toggleClass('img2');
+        });
+        //选项卡
+        function  liclick1() {
+            var con1=document.getElementById('con1');
+            var con2=document.getElementById('con2');
+            var con3=document.getElementById('con3');
+            con1.style.display='block';
+            con3.style.display='none';
+            con2.style.display='none';
+        }
+        function  liclick2() {
+            var con1=document.getElementById('con1');
+            var con2=document.getElementById('con2');
+            var con3=document.getElementById('con3');
+            con1.style.display='none';
+            con3.style.display='none';
+            con2.style.display='block';
+        }
+        function  liclick3() {
+            var con1=document.getElementById('con1');
+            var con2=document.getElementById('con2');
+            var con3=document.getElementById('con3');
+            con1.style.display='none';
+            con2.style.display='none';
+            con3.style.display='block';
+        }
+
+        //分期付款
+        $(function(){
+            $('#paymonth ul li:first').css('border-color','rgb(113, 194, 161)')
+        })
+
+    </script>
+</body>
+</html>

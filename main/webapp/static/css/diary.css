@@ -1,0 +1,217 @@
+@charset "UTF-8";
+*{
+    margin:0;
+    padding:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 微软雅黑;
+}
+ul{
+    list-style: none;
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+h4{
+    font-weight:normal;
+    margin:20px 0  10px 10px;
+}
+.clearfloat:after{
+    display: block;
+    clear: both;
+    content: '';
+    visibility: hidden;
+    height:0;
+}
+
+/*src*/
+body{
+    width:95%;
+    margin:0 auto;
+}
+header,main{
+    width: 100%;
+}
+#main{
+    width:75%;
+    float: left;
+}
+#right{
+    width:20%;
+    float: left;
+}
+.src{
+    margin-top:18px;
+}
+.src span{
+    padding:0 5px;
+}
+.src .srcspan{
+    display: inline-block;
+    width:30px;
+}
+.src .srcspan img{
+    width:26px;
+    vertical-align: -1px;
+}
+.src span a:hover {
+    color: #71c2a1;
+}
+/*main*/
+#main{
+    margin-right:5%;
+}
+#main>h4{
+    font-size: 18px;
+    margin-left:0;
+    padding-bottom:5px;
+    border-bottom: 1px solid  #71c2a1;
+}
+#main .diary{
+    padding-bottom:10px;
+    margin-bottom:25px;
+    border-bottom:1px solid #eee;
+}
+#main .diary:last-child{
+    border-bottom:1px solid transparent;
+}
+#main .diary .diaryleft{
+    width:20%;
+   float: left;
+
+}
+#main .diary .diaryleft img{
+    width:100%;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+#main .diary .diaryright{
+    width:80%;
+    float: left;
+    padding-left:2%;
+}
+#main .diary .diaryright h5 a{
+    font-weight:normal;
+    color:rgba(0,0,0,0.8);
+    font-size:1.4em;
+    color:#ff5d58;
+    font-family: '华文新魏';
+}
+#main .diary .diaryright h5 a:hover{
+    color:#ffc33d;
+}
+#main .diary .diaryright p{
+    padding-top:10px;
+    padding-bottom:7px;
+    text-indent: 2em;
+    font-size:0.9em;
+    color: rgba(0,0,0,0.8);
+    line-height: 1.2em;
+}
+#main .diary .diaryright button{
+   padding:8px 25px;
+    border:1px solid transparent;
+    background-color: #ff5d58;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom:8px;
+}
+#main .diary .diaryright button:hover{
+    border:1px solid #ff5d58;
+    color: #ff5d58;
+    background-color: #fff;
+
+}
+
+
+
+
+.dimg{
+    margin-top:3px;
+    /*margin-left:;*/
+    clear: both;
+}
+.dimg li{
+    display: inline-block;
+    font-size:0.8em;
+    color: rgba(0,0,0,0.8);
+    padding-right:5%;
+}
+.dimg li:nth-child(3),.dimg li:last-child{
+    cursor: pointer;
+}
+.dimg li:nth-child(3):hover,.dimg li:last-child:hover{
+    color: #ffc33d;
+}
+.dimg li img{
+    width:15px;
+    padding-right:2px;
+    vertical-align: -1px;
+}
+
+/*aside right*/
+/*right*/
+@media screen and  (min-width: 1145px){
+    @keyframes mycartoon {
+        0%{
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+        }
+    }
+    #right ul li{
+        margin-top:2px;
+    }
+    #right ul li .spanimg{
+        display: inline-block;
+        width:15%;
+    }
+    #right ul li .spantitle{
+        display: inline-block;
+        width:85%;
+    }
+    #right ul li:hover .spanimg img{
+        animation:mycartoon 1s linear;
+        -webkit-animation:mycartoon 1s linear;
+        -moz-animation: mycartoon 1s linear;
+        -webkit-box-shadow: inset 1px  1px  2px #ccc;
+        -moz-box-shadow: inset 1px  1px  2px #ccc;
+        box-shadow:inset  0  0  2px #ccc;
+        border:1px solid #aaa;
+    }
+
+    #right ul li .spanimg img{
+        width:40px;
+        height:40px;
+        border-radius:50%;
+        padding:2px;
+        border:1px solid #ccc;
+        vertical-align:middle;
+
+    }
+    #right ul li .spantitle{
+        font-size:0.8em;
+    }
+}
+@media screen and (max-width: 1145px){
+    #main{
+        width: 100%;
+    }
+    #right{
+        display: none;
+    }
+}

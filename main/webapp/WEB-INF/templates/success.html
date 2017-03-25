@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>添加成功</title>
+</head>
+<script type="text/css">
+    table{
+        border-color: #F7F7F7;
+        border: 10px;
+    }
+   tr td{
+        height: 50px;
+        width: 100px;
+        background-color: #666666;
+    }
+</script>
+<body>
+恭喜您，添加该多肉成功！
+<table>
+    <tr>
+        <td>名称</td>
+        <td>价格</td>
+        <td>图片</td>
+    </tr>
+    <tr>
+        <td><span th:text="${plant.plantname}" /></td>
+        <td><span th:text="${plant.price}" /></td>
+        <td><img th:src="${plant.imgs}" /></td>
+    </tr>
+</table>
+</body>
+</html>

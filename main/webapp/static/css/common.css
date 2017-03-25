@@ -1,0 +1,30 @@
+
+/*footer*/
+footer{
+    width:100%;
+    clear: both;
+    height:60px;
+    text-align: center;
+    background-color: #71c2a1;
+    color: #fff;
+
+}
+footer ul li{
+    display: inline-block;
+    padding:5px 20px;
+}
+footer ul li a{
+    color: #fff;
+}
+footer ul li a:hover{
+    color: rgba(127, 127, 127, 0.88);
+}
+@media screen and (max-width: 650px){
+
+    footer ul li{
+        padding:5px 0;
+    }
+    footer p, footer ul li a, footer ul li span{
+        font-size:0.8em;
+    }
+}

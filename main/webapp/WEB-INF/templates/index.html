@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <title>可爱多肉</title>
+    <meta name="keywords" content="多肉、多肉植物"/>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="description" content="萌肉，多肉植物的采集、鉴赏、讨论、种植、学习网站"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0" />
+        <link type="text/css" rel="stylesheet" href="/static/css/common.css"/>
+        <link type="text/css" rel="stylesheet" href="/static/css/index.css"/>
+        <script type="text/javascript" src="/static/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="/static/js/jquery.js"></script>
+        <script src="/static/js/load_plants.js" type="text/javascript"></script>
+        <style>
+            .menu{
+                position: absolute;
+                top:0;
+                left:0;
+                width:100%;
+            }
+            .menu .menuspan,.menu .menuimg{
+                display: inline-block;
+                height:40px;
+                line-height:40px;
+                width:50%;
+                float: left;
+            }
+            .menu .menuspan{
+                padding-left:10px;
+            }
+            .menu .menuspan img{
+                width:25px;
+
+            }
+            .menu .menuimg{
+                text-align: right;
+                padding-right:20px;
+                padding-top:5px;
+            }
+            .menu .menuimg img{
+                width:28px;
+            }
+            .menu .menuimg img:hover{
+                -webkit-box-shadow: 0 0 1px #ccc;
+                -moz-box-shadow: 0 0 1px #6ebf97;
+                box-shadow:0 0 1px #6ebf97;
+            }
+
+            @media screen and (max-width: 600px){
+                header{
+                    width:100%;
+                    height:40px;
+                    background-color: #eeeeee;
+                    border-bottom:1px solid #ccc;
+                }
+               header nav{
+                    position: absolute;
+                    z-index:100;
+                    width:1500%;
+                    top:40px;
+                    left:0;
+                }
+                header nav ul{
+                    width:100%;
+                }
+                header nav ul li{
+                    width:100%;
+                    height:30px;
+                    line-height:30px;
+                    padding-left:10px;
+                    background-color:#eeeeee;
+                }
+                header nav ul li a{
+                    display: inline-block;
+                    color: #aaa;
+                    font-size:14px;
+                }
+                header nav ul li:hover{
+                    -webkit-box-shadow:  0 0  2px #aaa;
+                    -moz-box-shadow:  0 0  2px #aaa;
+                    box-shadow:  0 0  2px #aaa;
+                    border-bottom: 1px #ddd solid;
+                }
+            }
+        </style>
+</head>
+<body>
+    <header>
+        <div class="larmenu">
+            <div class="logo">
+                <a href="index.html"><img id="logo" src="/static/img/logo.png"/></a>
+            </div>
+            <nav>
+                <ul id="hful">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="weitao.html" target="_blank">多肉微淘</a></li>
+                    <li><a href="diary.html" target="_blank">种植日记</a></li>
+                    <li><a href="baike.html" target="_blank">多肉百科</a></li>
+                </ul>
+                <ul id="hsul">
+                    <li><a th:href="@{/login}" target="_blank">登录</a></li>
+                    <li><a th:href="@{/regist}" target="_blank">注册</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+    <div id="headimg"  >
+        <img src="/static/img/1.jpg" alt="一不小心掉入多肉的坑"/>
+    </div>
+    <main>
+        <aside id="left">
+            <ul >
+                <li ><a href="#duorou">趣味多肉</a></li>
+                <li><a href="#penqi">精致盆器</a></li>
+                <li><a href="#zhuangshi">装饰材料</a></li>
+                <li><a href="#zhongzi">神奇种子</a></li>
+                <li><a href="#turang">土壤彩石</a></li>
+                <li><a href="#huafei">花肥养殖</a></li>
+                <li><a href="#gongju">园艺工具</a></li>
+            </ul>
+        </aside>
+        <section id="main">
+            <!--section1 多肉-->
+            <section id="duorou">
+                <h4>趣味多肉</h4>
+                <ul id="index_dr" >
+                   <!-- <li><a href="#"><figure><img src="/static/img/j1.jpg" alt="仙女杯属西陌莎"/><figcaption>西陌莎</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/j2.jpg" alt="拟石莲花属姬葡萄"/><figcaption>姬葡萄</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/j3.jpg" alt="景天属克雷吉"/><figcaption>克雷吉</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/j4.jpg" alt="厚叶草属青星美人"/><figcaption>青星美人</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/j5.jpg" alt="莲花掌属黑法师"/><figcaption>黑法师</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/j6.jpg" alt="青锁龙属钱串"/><figcaption>钱串</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/j7.jpg" alt="伽蓝菜属金景天"/><figcaption>金景天</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/j8.jpg" alt="长生草属观音莲"/><figcaption>观音莲</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/j9.jpg" alt="风车草属桃之卵"/><figcaption>桃之卵</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/j10.jpg" alt="银波锦属熊童子"/><figcaption>熊童子</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/f1.jpg" alt="生石花属橄榄玉"/><figcaption>橄榄玉</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/f2.jpg" alt="肉锥花属群碧玉"/><figcaption>群碧玉</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/d1.jpg" alt="大戟属光棍树"/><figcaption>光棍树</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/ju1.jpg" alt="千里光属银月"/><figcaption>银月</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/l1.jpg" alt="龙舌兰属王妃雷神"/><figcaption>王妃雷神</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/b1.jpg" alt="十二卷属姬玉露"/><figcaption>姬玉露</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/x1.jpg" alt="老乐柱属幻乐"/><figcaption>幻乐</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/x2.jpg" alt="松露玉"/><figcaption>松露玉</figcaption></figure></a></li>
+                --></ul>
+            </section>
+
+            <!--section2 盆器-->
+            <section id="penqi">
+                <h4>精致盆器</h4>
+                <ul>
+                    <li><a href="#"><figure><img src="/static/img/jian1.jpg" alt="简约白瓷"/><figcaption>简约白瓷</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/jian2.jpg" alt="简约白瓷"/><figcaption>简约白瓷</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/hong1.gif"   alt="红陶花器"/><figcaption>红陶花器</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/hong2.jpg" alt="红陶花器"/><figcaption>红陶花器</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/jian1.jpg" alt="木质花器"/><figcaption>木质花器</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/mu1.jpg" alt="木质花器"/><figcaption>木质花器</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/bo1.jpg" alt="玻璃花瓶"/><figcaption>玻璃花瓶</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/bo2.jpg" alt="玻璃花瓶"/><figcaption>玻璃花瓶</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/su1.jpg" alt="塑料花瓶"/><figcaption>塑料花盘</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/su2.jpg" alt="塑料花瓶"/><figcaption>塑料花盘</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/chuang1.jpg" alt="创意花器"/><figcaption>创意花器</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/chuang2.jpg" alt="创意花器"/><figcaption>创意花器</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/chuang3.jpg" alt="创意花器"/><figcaption>创意花器</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/chuang4.jpg" alt="创意花器"/><figcaption>创意花器</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/chuang5.jpg" alt="创意花器"/><figcaption>创意花器</figcaption></figure></a></li>
+                </ul>
+            </section>
+
+            <!--section3 装饰-->
+            <!--改-->
+            <section id="zhuangshi">
+                <h4>装饰材料</h4>
+                <ul>
+                    <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/zhuang2.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/zhuang3.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
+                </ul>
+
+            </section>
+
+            <!--section4 种子-->
+            <!--改-->
+            <section id="zhongzi">
+                <h4>神奇种子</h4>
+                <ul>
+                    <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="神奇种子"/><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/zhuang2.jpg" alt="神奇种子" /><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/zhuang3.jpg" alt="神奇种子" /><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="神奇种子"/><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="神奇种子"/><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="神奇种子"/><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="神奇种子"/><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="神奇种子"/><figcaption>装饰材料</figcaption></figure></a></li>
+                </ul>
+
+
+            </section>
+
+            <!--section5 土壤-->
+            <section id="turang">
+                <h4>土壤彩石</h4>
+                <ul>
+                    <li><a href="#"><figure><img src="/static/img/tao1.jpg" alt="陶粒"/><figcaption>陶粒</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/wu1.jpg" alt="五合一营养土"/><figcaption>五合一营养土</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/jiu1.jpg" alt="九合一颗粒土"/><figcaption>九合一颗粒土</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/honcai1.jpg" alt="虹彩石"/><figcaption>虹彩石</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/jin1.jpg" alt="进口泥炭"/><figcaption>进口泥炭</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/lv1.jpg" alt="绿沸石"/><figcaption>绿沸石</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/qing1.jpg" alt="轻石"/><figcaption>轻石</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/shui1.jpg" alt="水苔"/><figcaption>水苔</figcaption></figure></a></li>
+                </ul>
+            </section>
+
+            <!--section6 花肥-->
+            <section id="huafei">
+                <h4>花肥养殖</h4>
+                    <ul>
+                        <li><a href="#"><figure><img src="/static/img/duo1.jpg" alt="多菌灵"/><figcaption>多菌灵</figcaption></figure></a></li>
+                        <li><a href="#"><figure><img src="/static/img/sheng1.jpg" alt="生根剂"/><figcaption>多菌灵</figcaption></figure></a></li>
+                        <li><a href="#"><figure><img src="/static/img/mian1.jpg" alt="灭虫剂"/><figcaption>多菌灵</figcaption></figure></a></li>
+                        <li><a href="#"><figure><img src="/static/img/huan1.jpg" alt="缓释剂"/><figcaption>多菌灵</figcaption></figure></a></li>
+                    </ul>
+
+            </section>
+
+            <!--section7 工具-->
+            <section id="gongju">
+                <h4>园艺工具</h4>
+                <ul>
+                    <li><a href="#"><figure><img src="/static/img/yuan1.jpg" alt="园艺小铲"/><figcaption>园艺小铲</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/yuan2.jpg" alt="园艺小铲"/><figcaption>园艺小铲</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/jiao1.jpg" alt="浇水利器"/><figcaption>浇水利器</figcaption></figure></a></li>
+                    <li><a href="#"><figure><img src="/static/img/qi1.jpg" alt="气吹"/><figcaption>气吹</figcaption></figure></a></li>
+
+                </ul>
+            </section>
+
+        </section>
+        <aside id="right">
+            <h4>多肉百科</h4>
+            <ul>
+                <li><a href=""><span class="spanimg"><img src="/static/img/w1.jpeg" alt="文章1"/></span><span class="spantitle">【多肉|白而雅的11种多肉】</span></a></li>
+                <li><a href=""><span class="spanimg"><img src="/static/img/w2.jpeg" alt="文章2"/></span><span class="spantitle">【十种最适合家养的多肉植物】</span></a></li>
+                <li><a href=""><span class="spanimg"><img src="/static/img/w3.jpeg" alt="文章3"/></span><span class="spantitle">【不小心碰掉的多肉叶子】</span></a></li>
+                <li><a href=""><span class="spanimg"><img src="/static/img/w4.jpeg" alt="文章4"/></span><span class="spantitle">【养多肉的好处，你知道吗?】</span></a></li>
+                <li><a href=""><span class="spanimg"><img src="/static/img/w5.jpeg" alt="文章5"/></span><span class="spantitle">【多肉植物的“湿土干栽”？】</span></a></li>
+                <li><a href=""><span class="spanimg"><img src="/static/img/w6.jpeg" alt="文章6"/></span><span class="spantitle">【楚城花事｜多肉 绿植 干花】</span></a></li>
+                <li><a href=""><span class="spanimg"><img src="/static/img/w7.jpeg" alt="文章7"/></span><span class="spantitle">【多肉 | 美丽的多肉庭院】</span></a></li>
+                <li><a href=""><span class="spanimg"><img src="/static/img/w8.jpeg" alt="文章8"/></span><span class="spantitle">【这哪里是多肉，明明是果冻！】</span></a></li>
+                <li><a href=""><span class="spanimg"><img src="/static/img/w9.jpeg" alt="文章9"/></span><span class="spantitle">【又是一年多肉换土时!】</span></a></li>
+                <li><a href=""><span class="spanimg"><img src="/static/img/w10.jpeg" alt="文章10"/></span><span class="spantitle">【识多肉之初识多肉】</span></a></li>
+
+            </ul>
+        </aside>
+    </main>
+    <footer>
+        <ul>
+            <li><span>友情链接：</span></li>
+            <li><a href="http://www.drzj.net/">多肉之家</a></li>
+            <li><a href="http://www.drlmeng.com/">多肉联盟</a></li>
+            <li><a href="http://pifa.duoroucn.com/">多肉互联</a></li>
+            <li><a href="http://www.suicao.com/">岁草网</a></li>
+            <li><a href="http://droooo.com/">多肉网</a></li>
+        </ul>
+        <p>Copyright&copy;2017翼灵物联 All Rights Reserved</p>
+    </footer>
+    <script src="/static/js/jquery-3.1.1.min.js"></script>
+    <script src="/static/js/index.js"></script>
+
+</body>
+</html>

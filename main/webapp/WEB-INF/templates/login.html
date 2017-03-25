@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/loginregister.css}"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0" />
+
+</head>
+<body>
+    <header>
+        <section class="logo">
+            <a href="index.html">
+                <img  th:src="@{static/img/logo.png}" alt="logo"/>
+                <span>可爱多肉</span>
+            </a>
+        </section>
+    </header>
+
+    <main>
+        <div>
+            <section class="formnav">
+                <ul>
+                    <li class="loginli"><img id="mailimg" th:src="@{/static/img/log.png}"/><span>可爱多肉登录</span></li>
+                    <li class="registerli"><img  id="vipimg" th:src="@{/static/img/reg.png}"/><span>可爱多肉注册</span></li>
+                </ul>
+            </section>
+            <section class="formcont" id="login" >
+                <form name="form1" th:action="@{/login}" method="post">
+                    <input  class="teltext" id="teltext" type="text" name="email" placeholder="请输入注册邮箱" onblur="loginverify1();log1result()"/>
+                    <input  class="pwdtext" id="pwdtext" type="password" name="password" placeholder="输入密码" onblur="loginverify2()"/>
+                    <p class="lrtip" id="tip1"></p>
+                    <p class="lrtip" id="tip2"></p>
+
+
+                    <input id="safebox" type="checkbox"/><lable  for="safebox">自动登录</lable>
+                    <input id="sslbox" type="checkbox"/><lable  for="sslbox">SSL安全登录</lable>
+                    <a id="forgetpwd" href="#">忘记密码?</a>
+
+                    <div class="tip">
+                        <span>请不要在网吧或者公共电脑上使用自动登录选项</span>
+                    </div>
+
+                    <input class="btn" id="loginbtn" type="submit" value="登录"/>
+                    <!--<input class="btn" id="registerbtn" type="button" value="注册"/>-->
+                </form>
+                <ul class="otherlogin">
+                    <li class="otherli1"><img id="blogimg" th:src="@{/static/img/qql.png}"/><a href="#"><span>QQ账号登录</span></a></li>
+                    <li class="otherli2"><img id="lightningimg" th:src="@{/static/img/wxl.png}"/><a href="#"><span>微信账号登录</span></a></li>
+                </ul>
+            </section>
+
+
+            <section class="formcont" id="register"  >
+                <form name="form2" th:action="@{/regist}" th:object="${user}" method="post">
+                    <input class='nametext' id="rnametext" type="text"  th:field="*{username}" placeholder="昵称" onblur="register1();reg1result()"/>
+                    <input class="teltext" id="rteltext"  type="text" th:field="*{email}" placeholder="请输入邮箱名" onblur="register2();reg2result()"/>
+                    <input class="pwdtext" id='rpwdtext' type="password" th:field="*{password}" placeholder="输入密码" onblur="register3();reg3result()"/>
+                    <input  class="rpwdtext" id="rrpwdtext" type="password"  placeholder="请重新输入密码" onblur="register4()"/>
+                    <p class="lrtip" id="tip3"></p>
+                    <p class="lrtip" id="tip4"></p>
+                    <p class="lrtip" id="tip5"></p>
+                    <p class="lrtip" id="tip6"></p>
+                    <!--<input class="btn" id="rloginbtn" type="button" value="登录"/>-->
+                    <input class="btn" id="rregisterbtn" type="submit" value="注册" />
+                </form>
+            </section>
+
+        </div>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="index.html" target="_blank">多肉首页</a></li>
+            <li><span>&Iota;</span></li>
+            <li><a href="weitao.html" target="_blank">多肉微淘</a></li>
+            <li><span>&Iota;</span></li>
+            <li><a href="diary.html" target="_blank">种植日记</a></li>
+            <li><span>&Iota;</span></li>
+            <li><a href="baike.html" target="_blank">多肉百科</a></li>
+            <li><p>翼灵物联 版权所有    Copyright ©2017&nbsp;&nbsp;All Rights Reserved</p></li>
+        </ul>
+    </footer>
+    <script th:src="@{/static/js/jquery-3.1.1.min.js}"></script>
+    <script th:src="@{/static/js/logreg.js}"></script>
+    <script th:if="${regist} == 'true'">
+        $("#login").css("display","none");
+        $("#register").css("display","block");
+    </script>
+</body>
+</html>
