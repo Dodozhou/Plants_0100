@@ -54,7 +54,7 @@
         <div class="goodsname col-5">
             <div class="dellist">
                 <ul class="detailul">
-                    <li id="li1"><span th:text="${p.plantname}"></span></li>
+                    <li id="li1"><span th:text="${p.name}"></span></li>
                     <li id="li2">价格：&yen; <span th:text="${p.price}"></span>元</li>
                     <!--<li id="hr"><hr/></li>-->
                 </ul>
@@ -101,10 +101,7 @@
             <div id="navlist">
                 <ul>
                     <li class="select" onclick="liclick1()">
-                       多肉介绍
-                    </li>
-                    <li id="tab2" onclick="liclick2()">
-                      多肉养护
+                       盆器介绍
                     </li>
                     <li id="tab3" onclick="liclick3()">
                         肉友互动
@@ -113,12 +110,8 @@
             </div>
             <div id="content">
                 <div class="con" id="con1">
-                    <span>多肉介绍</span>
+                    <span>盆器介绍</span>
                     <p><span th:text="${p.description}"></span></p></div>
-                <div class="con" id="con2">
-                    <span>多肉养护</span>
-                    <p>喜温暖干燥和阳光充足环境，生长季节可以全日照，但是夏季高温达到35度就要适当遮阳通风。不耐寒，耐干旱，怕水湿和强光暴晒，平时的浇水保持盆土的湿润即可，避免雨淋和积水。冬季可以不浇水。保持盆土的基本干燥即可。</p>
-                </div>
                 <div class="con" id="con3">
                     <span>肉友互动</span>
                     <!--改-->

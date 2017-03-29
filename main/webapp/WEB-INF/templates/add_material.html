@@ -32,17 +32,17 @@
                     </label>
                 </div>
                 <div class="col-12 table">
-                    <form th:action="@{/plant_upload}" method="post"
-                          th:object="${plant}" enctype="multipart/form-data">
+                    <form th:action="@{/material_upload}" method="post"
+                          th:object="${material}" enctype="multipart/form-data">
                         <div class="col-3 span">
-                            <span>多肉名称</span>
+                            <span>名称</span>
                         </div>
                         <div class="col-9">
-                            <input id="text1" th:field="*{plantname}" onclick="document.getElementById('text1').style.backgroundColor='#fff'" class="input1" type="text" size="25" placeholder="少于25字"/>
+                            <input id="text1" th:field="*{name}" onclick="document.getElementById('text1').style.backgroundColor='#fff'" class="input1" type="text" size="25" placeholder="少于25字"/>
                         </div>
                     <div id="textarea">
                         <div class="col-3 span">
-                            <span>商品详情</span>
+                            <span>描述</span>
                         </div>
                         <div class="col-9">
                             <textarea id="text2" th:field="*{description}" onclick="document.getElementById('text2').style.backgroundColor='#fff'" class="input1" rows="5" placeholder="商品用途、新旧程度、原价等信息"></textarea>
@@ -56,21 +56,20 @@
                             <input  id="text4" th:field="*{price}" onclick="document.getElementById('text4').style.backgroundColor='#fff'" class="input2" type="text"  placeholder="&yen; "/>
                         </div>
                         <div class="col-3 span">
-                            <span>多肉类别</span>
+                            <span>类别</span>
                         </div>
                         <div class="col-9">
                             <select th:field="*{category}">
-                                <option value="仙人掌科">仙人掌科</option>
-                                <option value="景天科">景天科</option>
-                                <option value="大戟科">大戟科</option>
-                                <option value="番杏科">番杏科</option>
-                                <option value="菊科">菊科</option>
-                                <option value="龙舌兰科">龙舌兰科</option>
-                                <option value="百合科">百合科</option>
+                                <option value="盆器">盆器</option>
+                                <option value="装饰">装饰</option>
+                                <option value="种子">种子</option>
+                                <option value="土壤">土壤</option>
+                                <option value="化肥">化肥</option>
+                                <option value="工具">工具</option>
                             </select>
                         </div>
 
-                    <div class="submit">
+                        <div class="submit">
                         <button value="agree" type="submit">发布</button>
                     </div>
                     </form>

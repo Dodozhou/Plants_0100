@@ -12,7 +12,7 @@
         <link type="text/css" rel="stylesheet" href="/static/css/index.css"/>
         <script type="text/javascript" src="/static/js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="/static/js/jquery.js"></script>
-        <script src="/static/js/load_plants.js" type="text/javascript"></script>
+        <!--<script src="/static/js/load_plants.js" type="text/javascript"></script>-->
         <style>
             .menu{
                 position: absolute;
@@ -94,13 +94,14 @@
             </div>
             <nav>
                 <ul id="hful">
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="weitao.html" target="_blank">多肉微淘</a></li>
-                    <li><a href="diary.html" target="_blank">种植日记</a></li>
-                    <li><a href="baike.html" target="_blank">多肉百科</a></li>
+                    <li><a th:href="@{/index}">首页</a></li>
+                    <li><a th:href="@{/weitao}" target="_blank">多肉微淘</a></li>
+                    <li><a th:href="@{/diary}" target="_blank">种植日记</a></li>
+                    <li><a th:href="@{/baike}" target="_blank">多肉百科</a></li>
+                    <li><a th:href="@{/diy}" target="_blank">多肉DIY</a></li>
                 </ul>
                 <ul id="hsul">
-                    <li><a th:href="@{/login}" target="_blank">登录</a></li>
+                    <li><a th:href="@{/login}" target="_blank" id="denglu">登录</a></li>
                     <li><a th:href="@{/regist}" target="_blank">注册</a></li>
                 </ul>
             </nav>
@@ -126,8 +127,9 @@
             <!--section1 多肉-->
             <section id="duorou">
                 <h4>趣味多肉</h4>
-                <ul id="index_dr" >
-                   <!-- <li><a href="#"><figure><img src="/static/img/j1.jpg" alt="仙女杯属西陌莎"/><figcaption>西陌莎</figcaption></figure></a></li>
+                <ul>
+                    <li th:each="plant,iterStat:${plants}"><a th:href="@{'/detail/'+${plant.id}}"><figure><img th:src="${plant.imgs}" th:alt="${plant.plantname}"/><figcaption th:text="${plant.plantname}"></figcaption></figure></a></li>
+                   <!--
                     <li><a href="#"><figure><img src="/static/img/j2.jpg" alt="拟石莲花属姬葡萄"/><figcaption>姬葡萄</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/j3.jpg" alt="景天属克雷吉"/><figcaption>克雷吉</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/j4.jpg" alt="厚叶草属青星美人"/><figcaption>青星美人</figcaption></figure></a></li>
@@ -152,7 +154,8 @@
             <section id="penqi">
                 <h4>精致盆器</h4>
                 <ul>
-                    <li><a href="#"><figure><img src="/static/img/jian1.jpg" alt="简约白瓷"/><figcaption>简约白瓷</figcaption></figure></a></li>
+                    <li th:each="penqi,iterStat:${penqis}"><a th:href="@{'/material/detail/'+${penqi.id}}"><figure><img th:src="${penqi.imgs}" th:alt="${penqi.name}"/><figcaption th:text="${penqi.name}"></figcaption></figure></a></li>
+                    <!--<li><a href="#"><figure><img src="/static/img/jian1.jpg" alt="简约白瓷"/><figcaption>简约白瓷</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/jian2.jpg" alt="简约白瓷"/><figcaption>简约白瓷</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/hong1.gif"   alt="红陶花器"/><figcaption>红陶花器</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/hong2.jpg" alt="红陶花器"/><figcaption>红陶花器</figcaption></figure></a></li>
@@ -167,7 +170,7 @@
                     <li><a href="#"><figure><img src="/static/img/chuang3.jpg" alt="创意花器"/><figcaption>创意花器</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/chuang4.jpg" alt="创意花器"/><figcaption>创意花器</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/chuang5.jpg" alt="创意花器"/><figcaption>创意花器</figcaption></figure></a></li>
-                </ul>
+                --></ul>
             </section>
 
             <!--section3 装饰-->
@@ -175,7 +178,8 @@
             <section id="zhuangshi">
                 <h4>装饰材料</h4>
                 <ul>
-                    <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li th:each="decor,iterStat:${decors}"><a th:href="@{'/material/detail/'+${decor.id}}"><figure><img th:src="${decor.imgs}" th:alt="${decor.name}"/><figcaption th:text="${decor.name}"></figcaption></figure></a></li>
+                    <!--<li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/zhuang2.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/zhuang3.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
@@ -183,7 +187,7 @@
                     <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="装饰材料"/><figcaption>装饰材料</figcaption></figure></a></li>
-                </ul>
+                --></ul>
 
             </section>
 
@@ -192,7 +196,8 @@
             <section id="zhongzi">
                 <h4>神奇种子</h4>
                 <ul>
-                    <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="神奇种子"/><figcaption>装饰材料</figcaption></figure></a></li>
+                    <li th:each="seed,iterStat:${seeds}"><a th:href="@{'/material/detail/'+${seed.id}}"><figure><img th:src="${seed.imgs}" th:alt="${seed.name}"/><figcaption th:text="${seed.name}"></figcaption></figure></a></li>
+                    <!--<li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="神奇种子"/><figcaption>装饰材料</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/zhuang2.jpg" alt="神奇种子" /><figcaption>装饰材料</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/zhuang3.jpg" alt="神奇种子" /><figcaption>装饰材料</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="神奇种子"/><figcaption>装饰材料</figcaption></figure></a></li>
@@ -200,7 +205,7 @@
                     <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="神奇种子"/><figcaption>装饰材料</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="神奇种子"/><figcaption>装饰材料</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/zhuang1.jpg" alt="神奇种子"/><figcaption>装饰材料</figcaption></figure></a></li>
-                </ul>
+                --></ul>
 
 
             </section>
@@ -209,7 +214,8 @@
             <section id="turang">
                 <h4>土壤彩石</h4>
                 <ul>
-                    <li><a href="#"><figure><img src="/static/img/tao1.jpg" alt="陶粒"/><figcaption>陶粒</figcaption></figure></a></li>
+                    <li th:each="soil,iterStat:${soils}"><a th:href="@{'/material/detail/'+${soil.id}}"><figure><img th:src="${soil.imgs}" th:alt="${soil.name}"/><figcaption th:text="${soil.name}"></figcaption></figure></a></li>
+                    <!--<li><a href="#"><figure><img src="/static/img/tao1.jpg" alt="陶粒"/><figcaption>陶粒</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/wu1.jpg" alt="五合一营养土"/><figcaption>五合一营养土</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/jiu1.jpg" alt="九合一颗粒土"/><figcaption>九合一颗粒土</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/honcai1.jpg" alt="虹彩石"/><figcaption>虹彩石</figcaption></figure></a></li>
@@ -217,18 +223,19 @@
                     <li><a href="#"><figure><img src="/static/img/lv1.jpg" alt="绿沸石"/><figcaption>绿沸石</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/qing1.jpg" alt="轻石"/><figcaption>轻石</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/shui1.jpg" alt="水苔"/><figcaption>水苔</figcaption></figure></a></li>
-                </ul>
+                --></ul>
             </section>
 
             <!--section6 花肥-->
             <section id="huafei">
-                <h4>花肥养殖</h4>
+                <h4>化肥养殖</h4>
                     <ul>
-                        <li><a href="#"><figure><img src="/static/img/duo1.jpg" alt="多菌灵"/><figcaption>多菌灵</figcaption></figure></a></li>
+                        <li th:each="huafei,iterStat:${huafeis}"><a th:href="@{'/material/detail/'+${huafei.id}}"><figure><img th:src="${huafei.imgs}" th:alt="${huafei.name}"/><figcaption th:text="${huafei.name}"></figcaption></figure></a></li>
+                        <!--<li><a href="#"><figure><img src="/static/img/duo1.jpg" alt="多菌灵"/><figcaption>多菌灵</figcaption></figure></a></li>
                         <li><a href="#"><figure><img src="/static/img/sheng1.jpg" alt="生根剂"/><figcaption>多菌灵</figcaption></figure></a></li>
                         <li><a href="#"><figure><img src="/static/img/mian1.jpg" alt="灭虫剂"/><figcaption>多菌灵</figcaption></figure></a></li>
                         <li><a href="#"><figure><img src="/static/img/huan1.jpg" alt="缓释剂"/><figcaption>多菌灵</figcaption></figure></a></li>
-                    </ul>
+                    --></ul>
 
             </section>
 
@@ -236,11 +243,12 @@
             <section id="gongju">
                 <h4>园艺工具</h4>
                 <ul>
-                    <li><a href="#"><figure><img src="/static/img/yuan1.jpg" alt="园艺小铲"/><figcaption>园艺小铲</figcaption></figure></a></li>
+                    <li th:each="tool,iterStat:${tools}"><a th:href="@{'/material/detail/'+${tool.id}}"><figure><img th:src="${tool.imgs}" th:alt="${tool.name}"/><figcaption th:text="${tool.name}"></figcaption></figure></a></li>
+                    <!--<li><a href="#"><figure><img src="/static/img/yuan1.jpg" alt="园艺小铲"/><figcaption>园艺小铲</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/yuan2.jpg" alt="园艺小铲"/><figcaption>园艺小铲</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/jiao1.jpg" alt="浇水利器"/><figcaption>浇水利器</figcaption></figure></a></li>
                     <li><a href="#"><figure><img src="/static/img/qi1.jpg" alt="气吹"/><figcaption>气吹</figcaption></figure></a></li>
-
+-->
                 </ul>
             </section>
 
@@ -275,6 +283,5 @@
     </footer>
     <script src="/static/js/jquery-3.1.1.min.js"></script>
     <script src="/static/js/index.js"></script>
-
 </body>
 </html>

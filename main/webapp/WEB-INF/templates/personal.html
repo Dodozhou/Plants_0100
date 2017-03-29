@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>个人中心</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/personal.css"/>
+</head>
+<body>
+    <header class="src">
+        <span class="srcspan"><img src="/static/img/logo.png" alt="logo"/></span><span><a href="index.html">首页</a><span><span>/</span><a href="details.html">个人中心&nbsp;&raquo;</a></span></span>
+    </header>
+    <main>
+        <section class="personal">
+            <div class="info">
+                <div class="headimg"><a href="#"><span class="spanimg"><img src="/static/img/headimg.JPG"/></span><span th:text="${user.username}"></span></a></div>
+            </div>
+            <div class="cargo">
+                <div class="cargonav">
+                    <ul>
+                        <li>待付款&nbsp;<span>0</span></li>
+                        <li>待发货&nbsp;<span>0</span></li>
+                        <li>待收货&nbsp;<span>1</span></li>
+                        <li>待评价&nbsp;<span>0</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="cargocont">
+                <ul class="ul1">
+                    <li id="ul1li1">
+                        <ul class="ul2">
+                            <li class="imgli" id="imgli1"><img src="/static/img/goodscar.png"/></li>
+                            <li id="spanli1"><span>没有代付款的相关订单哦</span></li>
+                        </ul>
+                    </li>
+                    <li class="span0" id="ul1li2">没有待发货的相关订单哦</li>
+                    <li class="ul1li3" id="ul1li3">
+                        <ul class="ul3">
+                            <li><span class="time">2017-3-10</span><span>订单号：3223201281275366</span></li>
+                        </ul>
+                        <ul class="ul4">
+                            <li class="imgli"><img src="/static/img/f1.jpg"/><span>西陌莎</span></li>
+                        </ul>
+                    </li>
+                    <li class="span0" id="ul1li4">尚未有订单需要评价</li>
+                </ul>
+
+            </div>
+        </section>
+
+        <section class="mygoods">
+            <div class="mygoodsnav">
+                <ul>
+                    <li id="farmnav">多肉农场</li>
+                    <li id="warehousenav">多肉仓库</li>
+                </ul>
+            </div>
+            <div class="mygoodscont">
+                <ul>
+                    <li id="farm"><img src="/static/img/nc.jpg"/></li>
+                    <li id="warehouse">
+                        <ul>
+                            <li>
+                                <p>精致盆器&nbsp;<span>1</span></p>
+                                <div>
+                                    <span class="houseimg"><img src="/static/img/chuang4.jpg"/></span><span>创意花器</span>
+                                </div>
+
+                            </li>
+                            <li>
+                                <p>土壤彩石&nbsp;<span>2</span></p>
+                                <div>
+                                    <span class="houseimg"> <img src="/static/img/lv1.jpg"/></span><span>绿沸石</span>
+                                </div>
+                                <!--<div>-->
+                                    <!--<span class="houseimg"><img src="img/hong1.gif"/></span><span>虹彩石</span>-->
+                                <!--</div>-->
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="publish">
+            <div class="pubnav">
+                <ul>
+                    <li>种植日记</li>
+                    <li>多肉转让</li>
+                </ul>
+            </div>
+            <div class="pubcont">
+                <ul>
+                    <li>
+                        <form name="form1">
+                           <textarea>输入你的多肉日记，可以发表哦</textarea>
+                        </form>
+                    </li>
+                    <li>
+                        <form name="form2">
+                            <textarea>不想养护的多肉，可以发表转让~\(≧▽≦)/~啦啦啦</textarea>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn">
+                <button>发表</button>
+            </div>
+        </section>
+    </main>
+    <script src="/static/js/jquery-3.1.1.min.js"></script>
+    <script src="/static/js/personal.js"></script>
+
+
+</body>
+</html>

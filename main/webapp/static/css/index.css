@@ -142,6 +142,21 @@ main{
     text-align: center;
 }
 
+/*#in_ceil{
+    width:24%;
+    display: inline-block;
+    padding:10px;
+    margin-bottom:5px;
+    background-color: #eee;
+    text-align: center;
+}
+
+#in_img{
+    width:100%;
+    height:160px;
+    max-height:160px;
+}*/
+
 
 
 #main section ul li a figure img{

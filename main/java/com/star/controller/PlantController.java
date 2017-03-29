@@ -1,6 +1,8 @@
 package com.star.controller;
 
+import com.star.domain.Material;
 import com.star.domain.Plant;
+import com.star.repository.MaterialRepository;
 import com.star.repository.PlantRepository;
 import com.star.util.ImgPathUtil;
 import com.sun.javafx.sg.prism.NGShape;
@@ -23,7 +25,28 @@ public class PlantController {
     @Autowired
     PlantRepository repository;
     @Autowired
+    MaterialRepository materialRepository;
+    @Autowired
     ImgPathUtil imgPathUtil;
+
+    @RequestMapping({"/","/index"})
+    public String index(Model model){
+        List<Plant> plants=repository.findByCategoryOrderByPriceDesc("景天科");
+        List<Material> penqis=materialRepository.findByCategoryOrderByPriceDesc("盆器");
+        List<Material> decors=materialRepository.findByCategoryOrderByPriceDesc("装饰");
+        List<Material> seeds=materialRepository.findByCategoryOrderByPriceDesc("种子");
+        List<Material> soils=materialRepository.findByCategoryOrderByPriceDesc("土壤");
+        List<Material> huafeis=materialRepository.findByCategoryOrderByPriceDesc("化肥");
+        List<Material> tools=materialRepository.findByCategoryOrderByPriceDesc("工具");
+        model.addAttribute("plants",plants);
+        model.addAttribute("penqis",penqis);
+        model.addAttribute("decors",decors);
+        model.addAttribute("seeds",seeds);
+        model.addAttribute("soils",soils);
+        model.addAttribute("huafeis",huafeis);
+        model.addAttribute("tools",tools);
+        return "index";
+    }
 
     @RequestMapping(value = "/find/{category}",produces = "application/json")
     public @ResponseBody List<Plant> findByCategory(@PathVariable("category") String category){
@@ -34,7 +57,7 @@ public class PlantController {
     public String plant_detail(@PathVariable("id") int id,Model model){
         Plant plant=repository.findOne(id);
         model.addAttribute("p",plant);
-        return "details";
+        return "plant_detail";
     }
 
     @RequestMapping(value = "/add_plant",method = RequestMethod.GET)
